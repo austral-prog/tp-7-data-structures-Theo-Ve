@@ -42,9 +42,9 @@ def find_max_value(diccionario):
     if not diccionario:
         return ""
     mejor_nombre = ""
-    mejor_puntaje = -1
+    mejor_puntaje = None
     for nombre in diccionario:
-        if diccionario[nombre] > mejor_puntaje:
+        if mejor_puntaje is None or diccionario[nombre] > mejor_puntaje:
             mejor_puntaje = diccionario[nombre]
             mejor_nombre = nombre
     return mejor_nombre
@@ -62,21 +62,6 @@ def reverse_dict(diccionario):
 
 
 def word_frequency(palabras):
-    """
-    Cuenta cuántas veces aparece cada palabra en la lista y lo retorna
-    como un diccionario {palabra: cantidad}.
-
-    Args:
-        palabras: Lista de palabras (strings). También debe soportar
-                  un string vacío retornando un diccionario vacío.
-
-    Returns:
-        Diccionario con la frecuencia de cada palabra
-
-    Ejemplo:
-        word_frequency(["apple", "banana", "apple", "orange", "banana", "apple"])
-        -> {'apple': 3, 'banana': 2, 'orange': 1}
-    """
     if not palabras:
         return {}
     lista = {}

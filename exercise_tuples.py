@@ -19,24 +19,6 @@ def create_record(registro_azara, registro_rui):
     return "not a match"
 
 def sum_tuple(numeros):
-    """
-    Recorre una tupla de números y retorna la suma total.
-    Si la tupla está vacía, retorna 0.
-
-    No se permite usar la función built-in sum(). Implementar la suma
-    recorriendo la tupla con un for (o while).
-
-    Args:
-        numeros: Tupla de números (enteros o flotantes)
-
-    Returns:
-        La suma de todos los elementos de la tupla
-
-    Ejemplo:
-        sum_tuple((1, 2, 3, 4, 5)) -> 15
-        sum_tuple(()) -> 0
-    """
-
     if len(numeros) == 0:
         return 0
     else:
@@ -47,24 +29,6 @@ def sum_tuple(numeros):
 
 
 def count_occurrences(tupla, elemento):
-    """
-    Recorre la tupla y cuenta cuántas veces aparece el elemento.
-
-    No se permite usar el método .count(). Implementar el conteo
-    recorriendo la tupla con un for (o while).
-
-    Args:
-        tupla: Tupla con elementos de cualquier tipo
-        elemento: El elemento a contar
-
-    Returns:
-        La cantidad de veces que aparece el elemento (int)
-
-    Ejemplo:
-        count_occurrences((1, 2, 2, 3, 2), 2) -> 3
-        count_occurrences(('a', 'b', 'a'), 'c') -> 0
-    """
-
     contador = 0
     for item in tupla:
         if item == elemento:
@@ -75,7 +39,7 @@ def find_index(tupla, elemento):
     for indice, item in enumerate(tupla):
         if item == elemento:
             return indice
-    return 0
+    return -1
 
 
 def filter_positives(numeros):
